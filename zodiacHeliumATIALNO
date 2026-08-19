@@ -1,0 +1,17 @@
+
+zodiac_signs = ["Rat (鼠 / Shǔ)", "Ox (牛 / Niú)", "Tiger (虎 / Hǔ)", "Rabbit (兔 / Tù)", "Dragon (龙 / Lóng)", "Snake (蛇 / Shé)","Horse (马 / Mǎ)", "Goat (羊 / Yáng)", "Monkey (猴 / Hóu)", "Rooster (鸡 / Jī)", "Dog (狗 / Gǒu)", "Pig (猪 / Zhū)"]
+    #this is the list cointaining all the 12 Chinese zodiac signs in order, starting from Rat (the first sign) to Pig (the last sign)
+
+def zodiac(year): # this function takes a year as input and returns the corresponding Chinese zodiac sign
+    if year < 1900:
+        return "Invalid year, it must be 1900 or later."
+
+    index = (year - 1900) % 12
+    return zodiac_signs[index]
+
+def main(): # this is the main function that prompts the user for a year and displays the corresponding Chinese zodiac sign
+    year = int(input("Enter a year (1900 or later): "))
+    sign = zodiac(year)
+    print(f"Your Chinese zodiac sign for the year {year} is: {sign}")
+
+main()

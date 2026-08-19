@@ -1,0 +1,95 @@
+#1.-----------------------------------------------------------------------------------------------------------------------------------------------
+#Original code
+'''def greet_student(name,nChar):
+    for i in range(nChar):
+        print(name[i])
+
+name = input("Enter your name: ")
+nChar = input("Enter any numeric number: ")
+nChar = int(nChar)  
+greet_student(name, nChar)'''
+
+#a. If name is “Joseph The Dreamer” and nChar is 5, what will be the output of the code above and why?
+ #If the name is "Joseph The Dreamer" and nChar is 5, the output of the code will be:
+    #J
+    #o
+    #s
+    #e
+    #p
+ #because the function greet_student takes the name and nChar as inputs, and then iterates through the range of nChar which is 5.
+ #It prints each character of the name from index 0 to index 4,
+ #  resulting in the first five characters of "Joseph The Dreamer" being printed on separate lines.
+
+#b. Using the same name and nChar is 20, what now is the output and why?
+ #If the name is "Joseph The Dreamer" and nChar is 20, there will be an error because the function will try to access indices 0 to 19 of the name string,
+ #  but the name only has 18 characters (indices 0 to 17).
+
+#c.If there is an error message encountered in letter b, how will you be able to modify the code so that the error message will not appear.
+
+#new code
+'''def greet_student(name, nChar):
+    for i in range(nChar):
+        print(name[i])
+def main():
+    name = input("Enter your name: ")
+    nChar = int(input("Enter any numeric number: "))
+    
+    if nChar > len(name):
+        print(f"The number you entered ({nChar}) exceeds the length of the name ({len(name)}).")
+        return
+    
+    greet_student(name, nChar)
+
+main()'''
+
+#2 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Original code
+'''def greet_student(name, nChar):
+    for i in range(nChar)
+        print(name[0 : nChar])
+
+name = input("Enter your name: ")
+greet_student(name, len(name))'''
+
+#a. Find the syntax error and modify it.  Please identify the error and what did you do to fix it?
+ #The syntax error in the original code is that there is a missing colon (:) at the end of the for loop statement.
+ #The correct syntax for a for loop in Python requires a colon at the end of the line.
+
+#b. The code should be able to display a given name as an inverted triangle, please fix the code in order for it to do that.
+ #See sample output below if entered name is Joseph
+
+'''def greet_student(name, nChar):
+    for j in range(nChar, 0, -1):
+        print()
+        for i in range(j):
+            print(name[i], end="")
+
+name = input("Enter your name: ")
+greet_student(name, len(name))'''
+
+#3. -------------------------------------------------------------------------------------------------------------------------------------------------------
+#Original code
+'''n=0
+while n<1 or n > 100:
+    n = input("Enter a number between 1 and 100: ")
+    n = int(n)
+
+print("sum of all squared numbers is", sum_of_squares(n))'''
+
+#a.You are tasked to create the needed function/s that will return the sum of all squared numbers from 1 to n.
+
+def sum_of_squares(n):
+    total = 0
+    for i in range(1, n + 1):
+        total += i ** 2
+    return total
+
+def main():
+    n = 0
+    while n < 1 or n > 100:
+        n = int(input("Enter a number between 1 and 100: "))
+
+    print("Sum of all squared numbers is", sum_of_squares(n))
+
+main()
